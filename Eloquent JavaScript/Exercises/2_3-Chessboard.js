@@ -14,15 +14,15 @@
     # # # #
 */
 
-size = 8
-chessboard = ""
+var size = 8;
+var chessboard = "";
 
 for(let i = 0; i < size; i++) {
     for(let j = 0; j < size; j++) {
-        if((i + j) % 2 != 0) chessboard += "#" // odd positions
-        else chessboard += " "
+        if((i + j) % 2 != 0) chessboard += "#"; // odd positions
+        else chessboard += " ";
     }
-    chessboard += "\n"
+    chessboard += "\n";
 }
 
 console.log(chessboard);
