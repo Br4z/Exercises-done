@@ -1,3 +1,5 @@
+/* -------------------------------- Recursion ------------------------------- */
+
 /*
     By starting from the number 1 and repeatedly either adding 5 or multiplying by 3, an infinite set of numbers can be produced.
     How would you write a function that, given a number, tries to find a sequence of such additions and multiplications that
@@ -17,5 +19,6 @@ function findSolution(target) {
     return find(1, "1");
 }
 
-console.log(findSolution(24));
+// Test---
+// console.log(findSolution(24));
 // It no necessary found the shortest way
