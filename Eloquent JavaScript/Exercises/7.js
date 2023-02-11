@@ -1,4 +1,4 @@
-require("../Material/7");
+require("../Resources/7");
 /* ---------------------------- Measuring a robot --------------------------- */
 
 /*
