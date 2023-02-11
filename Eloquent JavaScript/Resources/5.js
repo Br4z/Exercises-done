@@ -144,8 +144,7 @@ function textScripts(text) {
 // Test---
 // console.log(textScripts('英国的狗说"woof", 俄罗斯的狗说"тяв"'));
 
-if(typeof module != "undefined" && module.exports && (typeof window == "undefined" || window.exports != exports)) module.exports = countBy;
-if(typeof global != "undefined" && !global.countBy) global.countBy = countBy;
-
-if(typeof module != "undefined" && module.exports && (typeof window == "undefined" || window.exports != exports)) module.exports = characterScript;
-if(typeof global != "undefined" && !global.characterScript) global.characterScript = characterScript;
+module.exports = {
+    countBy,
+    characterScript
+}

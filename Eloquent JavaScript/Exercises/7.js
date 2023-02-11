@@ -1,4 +1,4 @@
-require("../Resources/7");
+const {VillageState, roadGraph, findRoute, routeRobot, goalOrientedRobot} = require("../Resources/7");
 /* ---------------------------- Measuring a robot --------------------------- */
 
 /*

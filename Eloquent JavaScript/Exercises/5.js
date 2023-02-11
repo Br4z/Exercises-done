@@ -1,4 +1,4 @@
-require("../Resources/5")
+const {countBy, characterScript} = require("../Resources/5")
 /* ------------------------------- Flattering ------------------------------- */
 
 /*

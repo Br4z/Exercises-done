@@ -176,20 +176,10 @@ function goalOrientedRobot({place, parcels}, route) { // route correspond to mem
 // runRobot(VillageState.random(), goalOrientedRobot, []);
 
 
-
-if(typeof module != "undefined" && module.exports && (typeof window == "undefined" || window.exports != exports)) module.exports = VillageState;
-if(typeof global != "undefined" && !global.VillageState) global.VillageState = VillageState;
-
-if(typeof module != "undefined" && module.exports && (typeof window == "undefined" || window.exports != exports)) module.exports = roadGraph;
-if(typeof global != "undefined" && !global.roadGraph) global.roadGraph = roadGraph;
-
-if(typeof module != "undefined" && module.exports && (typeof window == "undefined" || window.exports != exports)) module.exports = findRoute;
-if(typeof global != "undefined" && !global.findRoute) global.findRoute = findRoute;
-
-if(typeof module != "undefined" && module.exports && (typeof window == "undefined" || window.exports != exports)) module.exports = routeRobot;
-if(typeof global != "undefined" && !global.goalOrientedRobot) global.routeRobot = routeRobot;
-
-if(typeof module != "undefined" && module.exports && (typeof window == "undefined" || window.exports != exports)) module.exports = goalOrientedRobot;
-if(typeof global != "undefined" && !global.goalOrientedRobot) global.goalOrientedRobot = goalOrientedRobot;
-
-
+module.exports = {
+    VillageState,
+    roadGraph,
+    findRoute,
+    routeRobot,
+    goalOrientedRobot
+}
