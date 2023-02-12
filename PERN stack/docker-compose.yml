@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  database:
+    build:
+      context: .
+      dockerfile: database.Dockerfile
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=test
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=admin
+
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    depends_on:
+      - database
+    ports:
+      - "4000:4000"
+
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+      - server

@@ -7,7 +7,7 @@ def find_next_empty(puzzle):
             if puzzle[r][c] == -1:
                 return r, c
 
-    return None, None  # if no spaces in the puzzle are empty
+    return None, None  # If no spaces in the puzzle are empty
 
 def is_valid(puzzle, guess, row, col):
     # Row check
