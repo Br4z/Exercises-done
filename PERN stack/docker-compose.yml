@@ -8,9 +8,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_DB=test
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=tasksdb
 
   server:
     build:
@@ -20,6 +20,12 @@ services:
       - database
     ports:
       - "4000:4000"
+    environment:
+      - DB_USER=root
+      - DB_PASSWORD=admin
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_DATABASE=tasksdb
 
   client:
     build:
