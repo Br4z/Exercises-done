@@ -6,8 +6,8 @@ require('./SCRIPTS')
 function filter(array, test) {
     let passed = [];
 
-    for(let element of array) {
-        if(test(element)) {
+    for (let element of array) {
+        if (test(element)) {
             passed.push(element);
         }
     }
@@ -22,7 +22,7 @@ function filter(array, test) {
 function map(array, transform) {
     let mapped = [];
 
-    for(let element of array) {
+    for (let element of array) {
         mapped.push(transform(element));
     }
     return mapped;

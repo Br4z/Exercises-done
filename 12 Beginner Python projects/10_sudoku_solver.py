@@ -30,28 +30,30 @@ def is_valid(puzzle, guess, row, col):
     return True
 
 def solve_sudoku(puzzle):
-    # step 1: choose somewhere on the puzzle to make a guess
+    # Step 1: choose somewhere on the puzzle to make a guess
     row, col = find_next_empty(puzzle)
 
-    # step 1.1: if there's nowhere left, then we're done because we only allowed valid inputs
+    # Step 1.1: if there's nowhere left, then we're done because we only allowed valid inputs
     if row is None: # col is None also
         return True
 
-    # step 2: if there is a place to put a number, then make a guess between 1 and 9
+    # Step 2: if there is a place to put a number, then make a guess between 1 and 9
     for guess in range(1, 10):
-        # step 3: check if this is a valid guess
+        # Step 3: check if this is a valid guess
         if is_valid(puzzle, guess, row, col):
-            # step 3.1: if this is a valid guess, then place it at that spot on the puzzle
+            # Step 3.1: if this is a valid guess, then place it at that spot on the puzzle
             puzzle[row][col] = guess
-            # step 4: then we recursively call our solver!
+            # Step 4: then we recursively call our solver!
             if solve_sudoku(puzzle):
                 return True
 
-        # step 5: it not valid or if nothing gets returned true, then we need to backtrack and try a new number
+        # Step 5: it not valid or if nothing gets returned true, then we need to backtrack and try a new number
         puzzle[row][col] = -1
 
-    # step 6: if none of the numbers that we try work, then this puzzle is UNSOLVABLE!!
+    # Step 6: if none of the numbers that we try work, then this puzzle is UNSOLVABLE!!
     return False
+
+# ------------------------------------- - ------------------------------------ #
 
 if __name__ == '__main__':
     example_board = [

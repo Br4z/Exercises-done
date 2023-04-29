@@ -3,7 +3,7 @@
 // Write a function min that takes two arguments and returns their minimum.
 
 function min(a, b) {
-    if(a < b) console.log(a);
+    if (a < b) console.log(a);
     else console.log(b);
 }
 
@@ -24,9 +24,9 @@ function min(a, b) {
 */
 
 function isEven(number){
-    if(number < 0) return isEven(-number);
-    else if(number == 0) return true;
-    else if(number == 1) return false;
+    if (number < 0) return isEven(-number);
+    else if (number == 0) return true;
+    else if (number == 1) return false;
     else return isEven(number - 2);
 }
 
@@ -46,10 +46,10 @@ function countBs(string) {
     let length = string.length;
     let count = 0;
 
-    for(let i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
         let char = string[i];
 
-        if(char == "B") count += 1;
+        if (char == "B") count += 1;
     }
     return count;
     /*
@@ -65,8 +65,8 @@ function countBs(string) {
 function countChar(string, char) {
     let count = 0;
 
-    for(let currentChar of string) {
-        if(currentChar == char) count += 1;
+    for (let currentChar of string) {
+        if (currentChar == char) count += 1;
     }
     return count;
 }

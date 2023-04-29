@@ -20,7 +20,7 @@ console.log(arrays.reduce((flat, current) => flat.concat(current), []));
 */
 
 function loop(start, test, update, body) {
-    for(let value = start; test(value); update(value)) {
+    for (let value = start; test(value); update(value)) {
         body(value)
     }
 }
@@ -36,8 +36,8 @@ function loop(start, test, update, body) {
 */
 
 function every(array, predicate) {
-    for(let element of array) {
-        if(!predicate(element)) return false;
+    for (let element of array) {
+        if (!predicate(element)) return false;
     }
     return true;
 }

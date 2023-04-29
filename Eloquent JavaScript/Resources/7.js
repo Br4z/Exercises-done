@@ -21,14 +21,14 @@ function buildGraph(edges) {
     let graph = Object.create(null);
 
     function addEdge(from, to) {
-        if(graph[from] == null) {
+        if (graph[from] == null) {
             graph[from] = [to];
         } else {
             graph[from].push(to);
         }
     }
 
-    for(let [from, to] of edges.map((r) => r.split("-"))) { // If a => b, ten b => a, which is a symmetric relation
+    for (let [from, to] of edges.map((r) => r.split("-"))) { // If a => b, ten b => a, which is a symmetric relation
         addEdge(from, to);
         addEdge(to, from);
     }
@@ -51,11 +51,11 @@ class VillageState {
     }
 
     move(destination) {
-        if(!roadGraph[this.place].includes(destination)) {
+        if (!roadGraph[this.place].includes(destination)) {
             return this; // If destinations isn't available in that place, ten return the preview state
         } else {
             let parcels = this.parcels.map((p) => { // map takes care of moving the parcels
-                    if(p.place != this.place) return p;
+                    if (p.place != this.place) return p;
                     else return {place: destination, address: p.address};
                 }).filter((p) => p.place != p.address); // filter takes care of making the delivery
             return new VillageState(destination, parcels);
@@ -77,8 +77,8 @@ class VillageState {
 /* ------------------------------- Simulation ------------------------------- */
 
 function runRobot(state, robot, memory) {
-    for(let turn = 0; ; turn++) { // We don't need test statement, because of the "break"
-        if(state.parcels.length == 0) {
+    for (let turn = 0; ; turn++) { // We don't need test statement, because of the "break"
+        if (state.parcels.length == 0) {
             console.log(`Done in ${turn} turns`);
             break;
         }
@@ -102,7 +102,7 @@ function randomRobot(state) { // This robot doesn't need memory
 VillageState.random = function(parcelCount = 5) {
     let parcels = [];
 
-    for(let i = 0; i < parcelCount; i++) {
+    for (let i = 0; i < parcelCount; i++) {
         let address = randomPick(Object.keys(roadGraph));
         let place;
 
@@ -127,7 +127,7 @@ const mailRoute = [ // Takes maximum 26 turns (twice the 13-step route)
 ];
 
 function routeRobot(state, memory) { // This robot doesn't need state
-    if(memory.length == 0) { // Initialization
+    if (memory.length == 0) { // Initialization
         memory = mailRoute;
     }
     return {direction: memory[0], memory: memory.slice(1)};
@@ -141,12 +141,12 @@ function routeRobot(state, memory) { // This robot doesn't need state
 function findRoute(graph, from, to) { // Always found a route, because all the places are connected
     let work = [{at: from, route: []}];
 
-    for(let i = 0; i < work.length; i++) {
+    for (let i = 0; i < work.length; i++) {
         let {at, route} = work[i];
 
-        for(let place of graph[at]) {
-            if(place == to) return route.concat(place); // Path found
-            if(!work.some((w) => w.at == place)) { // Path not found
+        for (let place of graph[at]) {
+            if (place == to) return route.concat(place); // Path found
+            if (!work.some((w) => w.at == place)) { // Path not found
                 work.push({at: place, route: route.concat(place)});
             }
 
@@ -160,10 +160,10 @@ function findRoute(graph, from, to) { // Always found a route, because all the p
 // The above function returns the first route it finds
 
 function goalOrientedRobot({place, parcels}, route) { // route correspond to memory
-    if(route.length == 0) {
+    if (route.length == 0) {
         let parcel = parcels[0];
 
-        if(parcel.place != place) { // Pick up selected parcel
+        if (parcel.place != place) { // Pick up selected parcel
             route = findRoute(roadGraph, place, parcel.place);
         } else { // Selected package picked up
             route = findRoute(roadGraph, place, parcel.address);

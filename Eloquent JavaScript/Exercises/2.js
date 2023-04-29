@@ -13,7 +13,7 @@
 
 height = 8
 
-for(let i = ""; i.length < height; i += "#") console.log(i);
+for (let i = ""; i.length < height; i += "#") console.log(i);
 
 /* -------------------------------- FizzBuzz -------------------------------- */
 
@@ -22,11 +22,11 @@ for(let i = ""; i.length < height; i += "#") console.log(i);
     print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
 */
 
-for(let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 100; i++) {
     let output = "";
 
-    if(i % 3 == 0) output += "Fizz";
-    else if(i % 5 == 0) output += "Buzz";
+    if (i % 3 == 0) output += "Fizz";
+    else if (i % 5 == 0) output += "Buzz";
 
     console.log(output || i);
 }
@@ -37,11 +37,11 @@ for(let i = 1; i <= 100; i++) {
     print "Fizz" or "Buzz" for numbers divisible by only one of those).
 */
 
-for(let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 100; i++) {
     let output = "";
 
-    if(i % 3 == 0) output += "Fizz";
-    if(i % 5 == 0) output += "Buzz";
+    if (i % 3 == 0) output += "Fizz";
+    if (i % 5 == 0) output += "Buzz";
 
     console.log(output || i); // If the output is "", it will display the number
 }
@@ -67,9 +67,9 @@ for(let i = 1; i <= 100; i++) {
 var size = 8;
 var chessboard = "";
 
-for(let i = 0; i < size; i++) {
-    for(let j = 0; j < size; j++) {
-        if((i + j) % 2 != 0) chessboard += "#"; // odd positions
+for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+        if ((i + j) % 2 != 0) chessboard += "#"; // odd positions
         else chessboard += " ";
     }
     chessboard += "\n";

@@ -11,8 +11,8 @@
 function range(start, end, step = 1) {
     let array = [];
 
-    if(step < 0) for(let i = start; i >= end; i += step) array.push(i);
-    else for(let i = start; i <= end; i += step) array.push(i);
+    if (step < 0) for (let i = start; i >= end; i += step) array.push(i);
+    else for (let i = start; i <= end; i += step) array.push(i);
 
     return array;
 }
@@ -28,7 +28,7 @@ function range(start, end, step = 1) {
 function sum(array) {
     let sum = 0;
 
-    for(let number of array) sum += number;
+    for (let number of array) sum += number;
 
     return sum;
 }
@@ -43,7 +43,7 @@ function sum(array) {
 function reverseArray(array) {
     let reversedArray = [];
 
-    for(let i = array.length - 1; i >= 0; i--) reversedArray.push(array[i]);
+    for (let i = array.length - 1; i >= 0; i--) reversedArray.push(array[i]);
 
     return reversedArray;
 }
@@ -56,7 +56,7 @@ function reverseArray(array) {
 function reverseArrayInPlace(array) {
     let length = array.length;
 
-    for(let i = 0; i < Math.floor(length / 2); i++) { // We divide the problem in half, we can call it "mirror inverted"
+    for (let i = 0; i < Math.floor(length / 2); i++) { // We divide the problem in half, we can call it "mirror inverted"
         // We use Math.floor approximation, because the middle element (if it has) always results in the same position
         // it occurs when the array has odd number of elements
         let old = array[i];
@@ -91,7 +91,7 @@ function arrayToList(array) {
     let list = null;
     let length = array.length;
 
-    if(length == 0) return null // array.isEmpty
+    if (length == 0) return null // array.isEmpty
     else list = {value : array.shift(), rest : arrayToList(array)};
 
     return list;
@@ -106,12 +106,12 @@ function listToArray(list, array = []) {
     /* Another way to do it
     let array = [];
 
-    for(let node = list; node; node = node.rest) array.push(node.value);
+    for (let node = list; node; node = node.rest) array.push(node.value);
 
     return array;
     */
 
-    if(list) {
+    if (list) {
         array.push(list.value);
 
         listToArray(list.rest, array);
@@ -134,8 +134,8 @@ function prepend(value, rest) { // value = element, rest = list
 */
 
 function nth(list, index) {
-    if(!list) return undefined;
-    else if(index == 0) return list.value;
+    if (!list) return undefined;
+    else if (index == 0) return list.value;
     else return nth(list.rest, index - 1);
 }
 
@@ -150,16 +150,16 @@ function nth(list, index) {
 */
 
 function deepEqual(a, b) {
-    if(a === b) return true;
-    else if(a == null || typeof a != "object" ||
+    if (a === b) return true;
+    else if (a == null || typeof a != "object" ||
     b == null || typeof b != "object") return false; // null is an object
     else {
         let keysA = Object.keys(a), keysB = Object.keys(b)
 
-        if(keysA.length != keysB.length) return false;
+        if (keysA.length != keysB.length) return false;
 
-        for(let key of keysA) {
-            if(!keysB.includes(key) || !deepEqual(a[key], b[key])) return false; // If none of the calls return true, that means that
+        for (let key of keysA) {
+            if (!keysB.includes(key) || !deepEqual(a[key], b[key])) return false; // If none of the calls return true, that means that
             // the objects are the same
         }
 

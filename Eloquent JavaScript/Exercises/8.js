@@ -9,7 +9,7 @@
 class MultiplicatorUnitFailure extends Error {}
 
 function primitiveMultiply(a, b) {
-    if(Math.random() < 0.2) {
+    if (Math.random() < 0.2) {
     return a * b;
     } else {
         throw new MultiplicatorUnitFailure("Klunk");
@@ -20,7 +20,7 @@ function reliableMultiply(a, b) {
     try {
         return primitiveMultiply(a, b);
     } catch(e) {
-        if(e instanceof MultiplicatorUnitFailure) return  reliableMultiply(a, b);
+        if (e instanceof MultiplicatorUnitFailure) return  reliableMultiply(a, b);
         else throw e;
     }
 }
@@ -52,7 +52,7 @@ const box = {
 function withBoxUnlocked(body) {
     let locked = box.locked
 
-    if(!locked) return body;
+    if (!locked) return body;
 
     box.unlock();
     try {

@@ -61,7 +61,7 @@ class Group {
     }
 
     add(element) {
-        if(!this.has(element)) {
+        if (!this.has(element)) {
             this.members.push(element);
         }
     }
@@ -70,7 +70,7 @@ class Group {
         let elementIndex = this.members.indexOf(element) + 1;
         console.log(elementIndex);
 
-        if(elementIndex != 0) { // When indexOf returns "-1"
+        if (elementIndex != 0) { // When indexOf returns "-1"
             this.members = this.members.splice(elementIndex, 1);
         }
 
@@ -84,7 +84,7 @@ class Group {
     static from(collection) {
         let group = new Group();
 
-        for(let element of collection) group.add(element);
+        for (let element of collection) group.add(element);
 
         return group;
     }
@@ -114,7 +114,7 @@ class GroupIterator {
     next() {
         let members = this.group.members;
 
-        if(this.index >= members.length) return {done: true}; // ">=" in case the index exceded the members.length
+        if (this.index >= members.length) return {done: true}; // ">=" in case the index exceded the members.length
         else {
             let value = {index: this.index, value: members[this.index]};
             this.index++;
@@ -124,7 +124,7 @@ class GroupIterator {
 }
 
 // Test---
-// for(let value of Group.from(["a", "b", "c"])) {
+// for (let value of Group.from(["a", "b", "c"])) {
 //     console.log(value);
 // }
 

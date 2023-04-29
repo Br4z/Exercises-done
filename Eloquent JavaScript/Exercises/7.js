@@ -9,8 +9,8 @@ const {VillageState, roadGraph, findRoute, routeRobot, goalOrientedRobot} = requ
 function compareRobots(robot1, memory1, robot2, memory2) {
 
     function countSteps(state, robot, memory) {
-        for(let turn = 0; ; turn++) {
-            if(state.parcels.length == 0) return turn
+        for (let turn = 0; ; turn++) {
+            if (state.parcels.length == 0) return turn
 
             let action = robot(state, memory);
             state = state.move(action.direction);
@@ -20,7 +20,7 @@ function compareRobots(robot1, memory1, robot2, memory2) {
 
     let total1 = 0, total2 = 0;
 
-    for(let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i++) {
         let initialState = VillageState.random();
 
         total1 += countSteps(initialState, robot1, memory1);
@@ -39,7 +39,7 @@ function compareRobots(robot1, memory1, robot2, memory2) {
 
 function smartRobot({place, parcels}, route) {
     let routes = parcels.map(parcel => {
-        if(parcel.place != place) {
+        if (parcel.place != place) {
             return {route: findRoute(roadGraph, place, parcel.place),
                     pickUp: true};
         } else {
@@ -77,12 +77,12 @@ class PGroup {
     }
 
     add(value) {
-        if(this.has(value)) return this;
+        if (this.has(value)) return this;
         else return new PGroup(this.members.concat(value));
     }
 
     delete(value) {
-        if(this.has(value)) {
+        if (this.has(value)) {
             let newMembers = this.members.filter(e => e != value);
             return new PGroup(newMembers);
         } else  return this;

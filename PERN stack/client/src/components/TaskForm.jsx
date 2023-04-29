@@ -24,7 +24,7 @@ const TaskForm = () => {
     const params = useParams();
 
     useEffect(() => {
-        if(params.id) {
+        if (params.id) {
             loadTask(params.id);
         }
     }, [params.id]);
@@ -40,7 +40,7 @@ const TaskForm = () => {
         event.preventDefault();
         setLoading(true);
         try {
-            if(editing) {
+            if (editing) {
                 const response = await fetch(
                 "http://localhost:4000/tasks/" + params.id,
                 {

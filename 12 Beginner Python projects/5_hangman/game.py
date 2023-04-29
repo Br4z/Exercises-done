@@ -1,8 +1,6 @@
 import requests, json, random, string
 from visual import lives_visual_dict
 
-
-
 response = requests.get("https://www.randomlists.com/data/words.json")
 words = list((json.loads(response.text)).values())[0]
 

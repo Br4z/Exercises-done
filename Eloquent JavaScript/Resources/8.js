@@ -2,7 +2,7 @@
 
 function numberToString(n, base = 10) {
     let result = "", sign = "";
-    if(n < 0) {
+    if (n < 0) {
         sign = "-";
         n = -n;
     }
@@ -27,7 +27,7 @@ function promptDirection(question) {
 }
 
 function look() {
-    if(promptDirection("Which way?") == "L") {
+    if (promptDirection("Which way?") == "L") {
         return "a house";
     } else {
         return "two angry bears";
@@ -51,14 +51,14 @@ const accounts = {
 
 function getAccount() {
     let accountName = prompt("Enter an account name");
-    if(!accounts.hasOwnProperty(accountName)) {
+    if (!accounts.hasOwnProperty(accountName)) {
         throw new Error(`No such account: ${accountName}`);
     }
     return accountName;
 }
 
 function transfer(from, amount) {
-    if(accounts[from] < amount) return;
+    if (accounts[from] < amount) return;
     let progress = 0;
 
     try {
