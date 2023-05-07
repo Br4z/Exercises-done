@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+    <h1>Tasks</h1>
+
+    {% for task in tasks %}
+        <div>
+            {% if not task.done %}
+                <h1 color = "red">{{ task.title }}</h1>
+            {% else %}
+                <h1 color = "green">{{ task.title }}</h1>
+            {% endif %}
+
+            <p>{{ task.description }}</p>
+
+            {% if not task.done %}
+                <p>Pending task</p>
+            {% else %}
+                <p>Task completed</p>
+            {% endif %}
+
+            <p>Project: {{ task.project.id }}</p>
+            <button>Delete</button>
+            <button>Done</button>
+        </div>
+    {% endfor %}
+{% endblock %}

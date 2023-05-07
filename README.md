@@ -11,3 +11,5 @@
     > To run an application write `docker-compose -f <application docker-compose.yml> build` and after write `docker-compose -f <application docker-compose.yml> up`.
 
 - [Curso Hacking Etico con Python desde Cero - Aprende Hacking Etico con Programacion Python](https://www.youtube.com/watch?v=5-IRImDXjjc)
+
+- [Django, Curso de Django para Principiantes](https://www.youtube.com/watch?v=T1intZyhXDU)
