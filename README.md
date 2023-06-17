@@ -1,15 +1,33 @@
-- [Eloquent JavaScript](https://eloquentjavascript.net/)
+# Proyects
 
-- [12 Beginner Python projects](https://www.youtube.com/watch?v=8ext9G7xspg)
+- [Eloquent JavaScript](https://eloquentjavascript.net/).
 
-- [PERN stack](https://www.youtube.com/watch?v=_zGL_MU29zs)
+	> [Go to](./Eloquent%20JavaScript/).
 
-- [React course](https://www.youtube.com/watch?v=rLoWMU4L_qE)
+- [12 Beginner Python projects](https://www.youtube.com/watch?v=8ext9G7xspg).
 
-    In this case I made 2 applications, each one have its own `docker-compose.yml` and `.Dockerfile`.
+	> [Go to](./12%20Beginner%20Python%20projects/).
 
-    > To run an application write `docker-compose -f <application docker-compose.yml> build` and after write `docker-compose -f <application docker-compose.yml> up`.
+- [PERN stack](https://www.youtube.com/watch?v=_zGL_MU29zs).
 
-- [Curso Hacking Etico con Python desde Cero - Aprende Hacking Etico con Programacion Python](https://www.youtube.com/watch?v=5-IRImDXjjc)
+	> [Go to](./PERN%20stack/).
 
-- [Django, Curso de Django para Principiantes](https://www.youtube.com/watch?v=T1intZyhXDU)
+- [React course](https://www.youtube.com/watch?v=rLoWMU4L_qE).
+
+	In this case I made 2 applications, each one have its own `docker-compose.yml` and `.Dockerfile`.
+
+	> To run an application write `docker-compose -f <application docker-compose.yml> build` and after write `docker-compose -f <application docker-compose.yml> up`.
+
+	> [Go to](./React%20course/).
+
+- [Curso Hacking Etico con Python desde Cero - Aprende Hacking Etico con Programacion Python](https://www.youtube.com/watch?v=5-IRImDXjjc).
+
+	> [Go to](./Curso%20Hacking%20Etico%20con%20Python%20desde%20Cero%20-%20Aprende%20Hacking%20Etico%20con%20Programacion%20Python/).
+
+- [Django, Curso de Django para Principiantes](https://www.youtube.com/watch?v=T1intZyhXDU).
+
+	> [Go to](./Django%2C%20Curso%20de%20Django%20para%20Principiantes/).
+
+- [Aprende React Desde Cero - Curso de React Con Proyectos](https://www.youtube.com/watch?v=6Jfk8ic3KVk&list=WL&index=6&t=28210s).
+
+	> [Go to](./Aprende%20React%20Desde%20Cero%20-%20Curso%20de%20React%20Con%20Proyectos/).
