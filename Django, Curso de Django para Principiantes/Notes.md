@@ -1,14 +1,16 @@
-# Pasos previos
+# Django, Curso de Django para Principiantes
+
+## Pasos previos
 
 - Instalar [Python](https://www.python.org/downloads/)
 - Verificar que tenemos Python y pip
 
-    ```
-    python --version -> Ver la versión de Python instalada
-    pip --version    -> Ver la versión de pip instalada
+    ```BASH
+    python --version # Ver la versión de Python instalada
+    pip --version    # Ver la versión de pip instalada
     ```
 
-# Entornos virtuales
+## Entornos virtuales
 
 Nos permiten tener por proyecto
 
@@ -36,14 +38,14 @@ Nos permiten tener por proyecto
 
     Otra forma de comprobar si está instalado es escribiendo:
 
-    ```python
+    ```PYTHON
     import django
     django.get_version()
     ```
 
     en el intérprete de Python.
 
-# Crear proyecto
+## Crear proyecto
 
 - Crear un proyecto: `django-admin startproject <name> .`
 
@@ -53,13 +55,13 @@ Nos permiten tener por proyecto
 
     > Por defecto corre en el puerto 8000.
 
-# Estructura de un proyecto
+## Estructura de un proyecto
 
 - `manage.py`: contiene comandos administrativos.
 - `db.sqlite3`: base de datos para testing.
 - `<project folder>`: donde se almacena nuestro proyecto.
 
-# Creación de apps
+## Creación de apps
 
 - Django maneja algo llamado apps, que se definen como ciertas funcionalidades juntas.
 
@@ -69,21 +71,21 @@ Nos permiten tener por proyecto
 
 - Desde la carpeta de nuestro proyecto podremos llamar a las apps que hayamos creado
 
-# Estructura de una app
+## Estructura de una app
 
 Django ya viene con un módulo para interactuar con la base de datos.
 
-# Modelos y bases de datos con Sqlite3
+## Modelos y bases de datos con Sqlite3
 
--  Escribimos los comandos `python manage.py makemigrations <app name>?` y `python manage.py migrate <app name>?` para que el proyecto detecte los nuevos modelos que hayamos creado.
+- Escribimos los comandos `python manage.py makemigrations <app name>?` y `python manage.py migrate <app name>?` para que el proyecto detecte los nuevos modelos que hayamos creado.
 
     > Para ver el contenido del archivo `db.sqlite3` podemos usar el programa [DB Browser for SQLite](https://sqlitebrowser.org/dl/)
 
-# Django Shell
+## Django Shell
 
 - `python manage.py shell`
 
-```python
+```PYTHON
 from myapp.models import Project, Task
 
 project = Project(name = "My first project")
@@ -103,7 +105,7 @@ project.task_set.get(id = 1) # Get a specific task from a project
 Projects.objects.filter(name__startwith = "application") # An get without an error
 ```
 
-# Django admin
+## Django admin
 
 - Podemos acceder al panel administrativo a través de la ruta `admin/`.
 
@@ -111,6 +113,6 @@ Projects.objects.filter(name__startwith = "application") # An get without an err
 
 - Para que en el panel los nombres de los objetos que hayamos sean más descriptivos, podemos crear el método `__str__` para las clases.
 
-# Static files
+## Static files
 
-Son archivos que el servidor no procesa (por ejemplo un los archivos `.css`).
+Son archivos que el servidor no procesa (un ejemplo son los archivos `.css`).
